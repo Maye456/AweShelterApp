@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xlmns:th="http://www.thymeleaf.org" xlmns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 <head>
     <meta charset="utf-8">
@@ -15,13 +15,13 @@
 
 <body>
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
-        <div class="container"><a class="navbar-brand logo" href="#">AweShelter</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarNav"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand logo" th:href="#">AweShelter</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarNav"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../animal/admin">Admin</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="../animal/all">Adopt</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../animal/searchForm">Search</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="../animal/admin">Admin</a></li>
+                    <li class="nav-item"><a class="nav-link active" th:href="../animal/all">Adopt</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="../animal/searchForm">Search</a></li>
                 </ul>
             </div>
         </div>
@@ -37,10 +37,10 @@
                         <div class="project-card-no-image">
                             <h3 th:text="${animal.name}">PET 1</h3>
                             <h3 style="margin-bottom: 5px;">Age:</h3>
-                            <h6 style="color: rgb(147,147,147);">proin<br></h6>
+                            <h6 style="color: rgb(147,147,147);" th:text="${animal.age}">proin<br></h6>
                             <h3 style="margin-bottom: 5px;">Breed:</h3>
-                            <h6 style="color: rgb(147,147,147);">lacinia at<br></h6>
-                            <div class="tags"></div><a class="btn btn-outline-primary btn-sm" role="button" id="edit-5" href="information.html" style="background: #00d1ff;color: black;font-weight: bold;">Select</a>
+                            <h6 style="color: rgb(147,147,147);" th:text="${animal.breed}">lacinia at<br></h6>
+                            <div class="tags"></div><a class="btn btn-outline-primary btn-sm" role="button" id="edit-5" th:href="information.html" style="background: #00d1ff;color: black;font-weight: bold;">Select</a>
                         </div>
                     </div>
                 </div>

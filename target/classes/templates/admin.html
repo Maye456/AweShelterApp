@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xlmns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
@@ -33,11 +33,11 @@
                     <h2>admin</h2>
                 </div><a th:href="create.html" style="font-size: 20px;">Create New Animal Form</a>
                 <div class="row">
-                    <div class="col-md-6 col-lg-4" th:each="animal: ${animals}>
+                    <div class="col-md-6 col-lg-4" each="animal: ${animals}>
                         <div class="project-card-no-image">
                             <h3>PET 1</h3>
                             <h3 style="margin-bottom: 5px;">Age:</h3>
-                            <h6 style="color: rgb(147,147,147);" th:text="${animal.age}">proin<br></h6>
+                            <h6 style="color: rgb(147,147,147);" text="${animal.age}">proin<br></h6>
                             <h3 style="margin-bottom: 5px;">Breed:</h3>
                             <h6 style="color: rgb(147,147,147);">lacinia at<br></h6><a class="btn btn-outline-primary btn-sm" role="button" id="edit" th:href="edit.html" style="background: #00ff29;color: black;font-weight: bold;">Edit</a><a class="btn btn-outline-primary btn-sm" role="button" id="delete" th:href="#" style="background: #ff0000;color: black;font-weight: bold;">Delete</a>
                             <div class="tags"></div>
