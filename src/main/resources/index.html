@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" th:href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" th:href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" th:href="assets/css/Footer-Clean.css">
+    <link rel="stylesheet" th:href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
+    <link rel="stylesheet" th:href="assets/css/Navigation-with-Search.css">
+</head>
+
+<body class="text-center">
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
+        <div class="container"><a class="navbar-brand logo" th:href="index.html">AweShelter</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarNav"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" th:href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="admin.html">Admin</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="adopt.html">Adopt</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page lanidng-page">
+        <section class="portfolio-block block-intro">
+            <div class="container">
+                <div class="avatar" style="background-image: url(&quot;assets/img/avatars/logo.png&quot;);width: 250px;height: 200px;"></div>
+                <div class="about-me">
+                    <p>We are the AweShelter! Here you can adopt dogs and cats! Find yourself a furry little friend for life!</p>
+                </div>
+            </div>
+        </section>
+        <section class="portfolio-block photography">
+            <div class="container">
+                <div class="row g-0">
+                    <div class="col-md-6 col-lg-4 item zoom-on-hover"><a th:href="#"><img class="img-fluid image" src="assets/img/avatars/puppy.png" style="width: 432px;height: 432px;"></a></div>
+                    <div class="col-md-6 col-lg-4 item zoom-on-hover"><a th:href="#"><img class="img-fluid image" src="assets/img/avatars/both.png" style="width: 432px;height: 432px;"></a></div>
+                    <div class="col-md-6 col-lg-4 item zoom-on-hover"><a th:href="#"><img class="img-fluid image" src="assets/img/avatars/cat.png" style="width: 432px;height: 432px;"></a></div>
+                </div>
+            </div>
+        </section>
+        <section class="portfolio-block call-to-action border-bottom"></section>
+    </main>
+    <footer class="page-footer">
+        <footer class="footer-clean">
+            <p class="copyright">AweShelter © 2022</p>
+        </footer>
+    </footer>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+</body>
+
+</html>
