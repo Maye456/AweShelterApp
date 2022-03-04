@@ -6,12 +6,16 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Service;
 
 import com.gcu.model.AnimalMapper;
 import com.gcu.model.AnimalModel;
 
 public class AnimalDataAccess implements IAnimalDataAccess<AnimalModel> 
 {
+	@Autowired
+	private AnimalRepository animalRepository;
+	
 	@Autowired
 	DataSource dataSource;
 	JdbcTemplate jdbcTemplate;

@@ -30,7 +30,7 @@ public class AnimalController
         model.addAttribute("title", "Show all animals");
         model.addAttribute("searchModel", new SearchAnimalModel());
         model.addAttribute("animals", animals);
-        return "animal";
+        return "adopt";
     }
 	
 	@GetMapping("/addNewForm")
@@ -38,7 +38,7 @@ public class AnimalController
 	{
 		model.addAttribute("title", "Add new animal");
 		model.addAttribute("animalModel", new AnimalModel());
-		return "animalAddNewForm";
+		return "create";
 	}
 	
 	@PostMapping("/addNew") 
@@ -50,7 +50,7 @@ public class AnimalController
         
         model.addAttribute("animals", animals); 
         model.addAttribute("searchModel", new SearchAnimalModel()); 
-        return "animal";
+        return "adopt";
     } 
 	
 	@GetMapping("/searchForm")
@@ -58,7 +58,7 @@ public class AnimalController
 	{
 		model.addAttribute("title", "Search Animals");
 		model.addAttribute("searchAnimalModel", new SearchAnimalModel());
-		return "procedureSearchForm";
+		return "search";
 	}
 	
 	@PostMapping("/searchResults")
@@ -70,13 +70,13 @@ public class AnimalController
 		if (bindingResult.hasErrors())
 		{
 			model.addAttribute("title", "Search for Animals");
-			return "searchAnimalForm";
+			return "search";
 		}
 		List<AnimalModel> animals = animalService.searchAnimals(searchModel.getSearchTerm());
 		model.addAttribute("title", "Search for Animals");
 		model.addAttribute("searchModel", searchModel);
 		model.addAttribute("animals", animals);
-		return "animal";
+		return "adopt";
 	}
 	
 	@GetMapping("/admin") 
@@ -86,7 +86,7 @@ public class AnimalController
         model.addAttribute("title", "Edit or Delete Animals");
         model.addAttribute("searchModel", new SearchAnimalModel());
         model.addAttribute("animals", animals);
-        return "animalAdmin";
+        return "admin";
 	}
 	
 	@PostMapping("/delete") 
@@ -98,7 +98,7 @@ public class AnimalController
 		
 		model.addAttribute("animals", animals); 
 		model.addAttribute("searchModel", new SearchAnimalModel()); 
-		return "animalAdmin";
+		return "admin";
 	}
 	
 	@PostMapping("/editForm") 
@@ -106,7 +106,7 @@ public class AnimalController
 	{
 		model.addAttribute("title", "Edit Animal");
 		model.addAttribute("animalModel", animalModel);
-		return "animalEdit";
+		return "edit";
 	}
 	
 	@PostMapping("/doUpdate") 
@@ -118,6 +118,6 @@ public class AnimalController
 		
 		model.addAttribute("animals", animals); 
 		model.addAttribute("searchModel", new SearchAnimalModel()); 
-		return "animalAdmin";
+		return "adopt";
 	}
 }
