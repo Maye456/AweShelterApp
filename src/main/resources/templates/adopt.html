@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Projects - Brand</title>
+    <title>Adopt - AweShelter</title>
     <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" th:href="@{/fonts/ionicons.min.css}">
@@ -40,7 +40,18 @@
                             <h6 style="color: rgb(147,147,147);">proin<br></h6>
                             <h3 style="margin-bottom: 5px;">Breed:</h3>
                             <h6 style="color: rgb(147,147,147);">lacinia at<br></h6>
-                            <div class="tags"></div><a class="btn btn-outline-primary btn-sm" role="button" id="edit-5" href="information.html" style="background: #00d1ff;color: black;font-weight: bold;">Select</a>
+                            
+                            <form th:action="@{addNewForm}"
+                            	th:object"${animal}" 
+                            	method="POST">
+	                            <div class="form-group">
+		                            <button class="btn btn-primary btn-block" 
+		                            type="submit"
+		                            style="background: #00d1ff;
+		                            color: black;
+		                            font-weight: bold;">SELECT</button>
+	                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>

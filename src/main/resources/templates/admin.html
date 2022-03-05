@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Projects - Brand</title>
+    <title>Admin - AweShelter</title>
     <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" th:href="@{/fonts/ionicons.min.css}">
@@ -31,65 +31,46 @@
             <div class="container">
                 <div class="heading">
                     <h2>admin</h2>
-                </div><a href="create.html" style="font-size: 20px;">Create New Animal Form</a>
+                   	<form th:action="@{addNewForm}">
+                   		<div class="form-group">
+		                            <button class="btn btn-primary btn-block" 
+		                            type="submit"
+		                            style="background: cyan;
+		                            color: black;
+		                            font-weight: bold;">Create New Animal Form</button>
+                   	</form>
+                </div><a href="create.html"></a>
                 <div class="row">
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4" th:each="animal : ${animals}">
                         <div class="project-card-no-image">
-                            <h3>PET 1</h3>
+                            <h3 th:text="${animal.name}">PET 1</h3>
                             <h3 style="margin-bottom: 5px;">Age:</h3>
-                            <h6 style="color: rgb(147,147,147);">proin<br></h6>
+                            <h6 style="color: rgb(147,147,147);" th:text="${animal.age}">proin<br></h6>
                             <h3 style="margin-bottom: 5px;">Breed:</h3>
-                            <h6 style="color: rgb(147,147,147);">lacinia at<br></h6><a class="btn btn-outline-primary btn-sm" role="button" id="edit" href="edit.html" style="background: #00ff29;color: black;font-weight: bold;">Edit</a><a class="btn btn-outline-primary btn-sm" role="button" id="delete" href="#" style="background: #ff0000;color: black;font-weight: bold;">Delete</a>
-                            <div class="tags"></div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card-no-image" style="font-weight: bold;">
-                            <h3>PET 2</h3>
-                            <h3 style="margin-bottom: 5px;">Age:</h3>
-                            <h6 style="color: rgb(147,147,147);">proin<br></h6>
-                            <h3 style="margin-bottom: 5px;">Breed:</h3>
-                            <h6 style="color: rgb(147,147,147);">lacinia at<br></h6><a class="btn btn-outline-primary btn-sm" role="button" id="edit-1" href="edit.html" style="background: #00ff29;color: black;font-weight: bold;">Edit</a><a class="btn btn-outline-primary btn-sm" role="button" id="delete-1" href="#" style="background: #ff0000;color: black;font-weight: bold;">Delete</a>
-                            <div class="tags"></div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card-no-image">
-                            <h3>PET 3</h3>
-                            <h3 style="margin-bottom: 5px;">Age:</h3>
-                            <h6 style="color: rgb(147,147,147);">proin<br></h6>
-                            <h3 style="margin-bottom: 5px;">Breed:</h3>
-                            <h6 style="color: rgb(147,147,147);">lacinia at<br></h6><a class="btn btn-outline-primary btn-sm" role="button" id="edit-2" href="edit.html" style="background: #00ff29;color: black;font-weight: bold;">Edit</a><a class="btn btn-outline-primary btn-sm" role="button" id="delete-2" href="#" style="background: #ff0000;color: black;font-weight: bold;">Delete</a>
-                            <div class="tags"></div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card-no-image">
-                            <h3>PET 4</h3>
-                            <h3 style="margin-bottom: 5px;">Age:</h3>
-                            <h6 style="color: rgb(147,147,147);">proin<br></h6>
-                            <h3 style="margin-bottom: 5px;">Breed:</h3>
-                            <h6 style="color: rgb(147,147,147);">lacinia at<br></h6><a class="btn btn-outline-primary btn-sm" role="button" id="edit-6" href="edit.html" style="background: #00ff29;color: black;font-weight: bold;">Edit</a><a class="btn btn-outline-primary btn-sm" role="button" id="delete-3" href="#" style="background: #ff0000;color: black;font-weight: bold;">Delete</a>
-                            <div class="tags"></div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card-no-image">
-                            <h3>PET 5</h3>
-                            <h3 style="margin-bottom: 5px;">Age:</h3>
-                            <h6 style="color: rgb(147,147,147);">proin<br></h6>
-                            <h3 style="margin-bottom: 5px;">Breed:</h3>
-                            <h6 style="color: rgb(147,147,147);">lacinia at<br></h6><a class="btn btn-outline-primary btn-sm" role="button" id="edit-7" href="edit.html" style="background: #00ff29;color: black;font-weight: bold;">Edit</a><a class="btn btn-outline-primary btn-sm" role="button" id="delete-4" href="#" style="background: #ff0000;color: black;font-weight: bold;">Delete</a>
-                            <div class="tags"></div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card-no-image">
-                            <h3>PET 6</h3>
-                            <h3 style="margin-bottom: 5px;">Age:</h3>
-                            <h6 style="color: rgb(147,147,147);">proin<br></h6>
-                            <h3 style="margin-bottom: 5px;">Breed:</h3>
-                            <h6 style="color: rgb(147,147,147);">lacinia at<br></h6><a class="btn btn-outline-primary btn-sm" role="button" id="edit-8" href="edit.html" style="background: #00ff29;color: black;font-weight: bold;">Edit</a><a class="btn btn-outline-primary btn-sm" role="button" id="delete-5" href="#" style="background: #ff0000;color: black;font-weight: bold;">Delete</a>
+                            <h6 style="color: rgb(147,147,147);" th:text="${animal.breed}">lacinia at<br></h6>
+                            
+                            <form th:action="@{editForm}"
+                            	th:object"${animal}" 
+                            	method="POST">
+	                            <div class="form-group">
+		                            <button class="btn btn-primary btn-block" 
+		                            type="submit"
+		                            style="background: #00ff29;
+		                            color: black;
+		                            font-weight: bold;">EDIT</button>
+	                            </div>
+                            </form>
+                            
+                            <form th:action="@{delete}"
+                            	th:object"${animal}" 
+                            	method="POST">
+		                            <button class="btn btn-primary btn-block" 
+		                            type="delete"
+		                            onclick="return confirm('Just double checking... delete animal?')"
+		                            style="background: #ff0000;
+		                            color: black;
+		                            font-weight: bold;">DELETE</button>
+		                      </form>
                             <div class="tags"></div>
                         </div>
                     </div>
