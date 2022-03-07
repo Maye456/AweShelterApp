@@ -31,7 +31,7 @@
             <div class="container">
                 <div class="heading">
                     <h2>admin</h2>
-                   	<form th:action="@{addNewForm}">
+                   	<form th:action="@{/animal/addNewForm}">
                    		<div class="form-group">
 		                            <button class="btn btn-primary btn-block" 
 		                            type="submit"
@@ -39,7 +39,9 @@
 		                            color: black;
 		                            font-weight: bold;">Create New Animal Form</button>
                    	</form>
-                </div><a href="create.html"></a>
+                </div>
+                <br>
+
                 <div class="row">
                     <div class="col-md-6 col-lg-4" th:each="animal : ${animals}">
                         <div class="project-card-no-image">
@@ -49,28 +51,33 @@
                             <h3 style="margin-bottom: 5px;">Breed:</h3>
                             <h6 style="color: rgb(147,147,147);" th:text="${animal.breed}">lacinia at<br></h6>
                             
-                            <form th:action="@{editForm}"
-                            	th:object"${animal}" 
-                            	method="POST">
+                            <form th:action="@{/animal/editForm}" th:object"${animals}" method="post">
 	                            <div class="form-group">
-		                            <button class="btn btn-primary btn-block" 
-		                            type="submit"
-		                            style="background: #00ff29;
-		                            color: black;
-		                            font-weight: bold;">EDIT</button>
+	                            	<input name="id" type="hidden" th:value="${animal.id}"> 
+	                            	<input name="name" type="hidden" th:value="${animal.name}"> 
+									<input name="age" type="hidden" th:value="${animal.age}"> 
+									<input name="weight" type="hidden" th:value="${animal.weight}">
+									<input name="breed" type="hidden" th:value="${animal.breed}">
+									<input name="description" type="hidden" th:value="${animal.description}">
+		                            <button class="btn btn-primary btn-block" type="submit" style="background: #00ff29; color: black; font-weight: bold;">EDIT</button>
 	                            </div>
                             </form>
                             
-                            <form th:action="@{delete}"
-                            	th:object"${animal}" 
-                            	method="POST">
+                            <form th:action="@{/animal/delete}" th:object"${animals}" method="post">
+	                            <div class="form-group">
+	                            	<input name="id" type="hidden" th:value="${animal.id}"> 
+									<input name="age" type="hidden" th:value="${animal.age}"> 
+									<input name="weight" type="hidden" th:value="${animal.weight}">
+									<input name="breed" type="hidden" th:value="${animal.breed}">
+									<input name="description" type="hidden" th:value="${animal.description}">
 		                            <button class="btn btn-primary btn-block" 
-		                            type="delete"
+		                            type="submit"
 		                            onclick="return confirm('Just double checking... delete animal?')"
 		                            style="background: #ff0000;
 		                            color: black;
 		                            font-weight: bold;">DELETE</button>
-		                      </form>
+	                            </div>
+		                    </form>
                             <div class="tags"></div>
                         </div>
                     </div>
