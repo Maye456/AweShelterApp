@@ -98,7 +98,7 @@ public class AnimalController
 		
 		model.addAttribute("animals", animals); 
 		model.addAttribute("searchModel", new SearchAnimalModel()); 
-		return "admin";
+		return "adopt";
 	}
 	
 	@PostMapping("/editForm") 
@@ -106,7 +106,7 @@ public class AnimalController
 	{
 		model.addAttribute("title", "Edit Animal");
 		model.addAttribute("animalModel", animalModel);
-		return "edit";
+		return "editAnimal";
 	}
 	
 	@PostMapping("/doUpdate") 

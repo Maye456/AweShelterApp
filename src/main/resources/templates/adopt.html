@@ -37,21 +37,9 @@
                         <div class="project-card-no-image">
                             <h3 th:text="${animal.name}">PET 1</h3>
                             <h3 style="margin-bottom: 5px;">Age:</h3>
-                            <h6 style="color: rgb(147,147,147);">proin<br></h6>
+                            <h6 th:text="${animal.age}" style="color: rgb(147,147,147);">proin<br></h6>
                             <h3 style="margin-bottom: 5px;">Breed:</h3>
-                            <h6 style="color: rgb(147,147,147);">lacinia at<br></h6>
-                            
-                            <form th:action="@{addNewForm}"
-                            	th:object"${animal}" 
-                            	method="POST">
-	                            <div class="form-group">
-		                            <button class="btn btn-primary btn-block" 
-		                            type="submit"
-		                            style="background: #00d1ff;
-		                            color: black;
-		                            font-weight: bold;">SELECT</button>
-	                            </div>
-                            </form>
+                            <h6 th:text="${animal.breed}" style="color: rgb(147,147,147);">lacinia at<br></h6>
                         </div>
                     </div>
                 </div>
