@@ -30,6 +30,9 @@ public class AnimalBusinessService implements IAnimalBusinessService
         return animal;
 	}
 
+	/**
+	 * Get all the animals 
+	 */
 	@Override
 	public List<AnimalModel> getAnimals() {
 		// Fetch the list of entities
