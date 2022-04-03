@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,9 +25,14 @@ public class AnimalController
 	@Autowired
 	IAnimalBusinessService animalService;
 	
+	Logger logger = LoggerFactory.getLogger(AnimalController.class);
+	
 	@GetMapping("/all")
     public String showAll(Model model)
     {
+		// Log the API Call
+        logger.info("Entering AnimalController.getAnimals()");
+        
         List<AnimalModel> animals = animalService.getAnimals();
         model.addAttribute("title", "Show all animals");
         model.addAttribute("searchModel", new SearchAnimalModel());
@@ -44,6 +51,9 @@ public class AnimalController
 	@PostMapping("/addNew") 
     public String addProcedure(@Valid AnimalModel newAnimal, BindingResult bindingResult, Model model) 
     {
+		// Log the API Call
+        logger.info("Entering AnimalController.addOne()");
+        
         animalService.addOne(newAnimal);
         
         List<AnimalModel> animals = animalService.getAnimals(); 
@@ -64,7 +74,8 @@ public class AnimalController
 	@PostMapping("/searchResults")
 	public String showAllAnimals(@Valid SearchAnimalModel searchModel, BindingResult bindingResult, Model model)
 	{
-		System.out.println("Performing search results for " + searchModel.getSearchTerm());
+		// Log the API Call
+        logger.info("Entering AnimalController.searchAnimals()");
 		
 		// Check for validation errors
 		if (bindingResult.hasErrors())
@@ -82,6 +93,9 @@ public class AnimalController
 	@GetMapping("/admin") 
 	public String showAnimalsForAdmin(Model model)
 	{  
+		// Log the API Call
+        logger.info("Entering AnimalController.getAnimalsADMIN()");
+        
 		List<AnimalModel> animals = animalService.getAnimals();
         model.addAttribute("title", "Edit or Delete Animals");
         model.addAttribute("searchModel", new SearchAnimalModel());
@@ -92,6 +106,9 @@ public class AnimalController
 	@PostMapping("/delete") 
 	public String deleteAnimal(@Valid AnimalModel animal, BindingResult bindingResult, Model model) 
 	{
+		// Log the API Call
+        logger.info("Entering AnimalController.deleteOne()");
+        
 		animalService.deleteOne(animal.getId());
 		
 		List<AnimalModel> animals = animalService.getAnimals(); 
@@ -112,6 +129,9 @@ public class AnimalController
 	@PostMapping("/doUpdate") 
 	public String updateAnimal(@Valid AnimalModel animal, BindingResult bindingResult, Model model)
 	{
+		// Log the API Call
+        logger.info("Entering AnimalController.updateOne()");
+        
 		animalService.updateOne(animal.getId(), animal);
 		
 		List<AnimalModel> animals = animalService.getAnimals();

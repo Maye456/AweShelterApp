@@ -3,9 +3,10 @@ package com.gcu.business;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.gcu.data.AnimalDataService;
 import com.gcu.model.AnimalEntity;
 import com.gcu.model.AnimalModel;
@@ -16,8 +17,13 @@ public class AnimalBusinessService implements IAnimalBusinessService
 	@Autowired
 	AnimalDataService service;
 	
+	Logger logger = LoggerFactory.getLogger(AnimalBusinessService.class);
+    
 	@Override
 	public AnimalModel getById(int Id) {
+		// Log the API Call
+        logger.info("Entering AnimalBusinessService.getById()");
+        
 		AnimalEntity result = service.getById(Id);
         AnimalModel animal = new AnimalModel(
                 result.getId(),
@@ -35,6 +41,9 @@ public class AnimalBusinessService implements IAnimalBusinessService
 	 */
 	@Override
 	public List<AnimalModel> getAnimals() {
+		// Log the API Call
+        logger.info("Entering AnimalBusinessService.getAnimals()");
+        
 		// Fetch the list of entities
         List<AnimalEntity> animalE = service.getAnimals();
         // Create an empty list of orders
@@ -58,6 +67,9 @@ public class AnimalBusinessService implements IAnimalBusinessService
 
 	@Override
 	public List<AnimalModel> searchAnimals(String searchTerm) {
+		// Log the API Call
+        logger.info("Entering AnimalBusinessService.searchAnimals()");
+        
 		// Fetch the list of entities
         List<AnimalEntity> animalE = service.searchAnimal(searchTerm);
         // Create an empty list of orders
@@ -81,6 +93,9 @@ public class AnimalBusinessService implements IAnimalBusinessService
 
 	@Override
 	public int addOne(AnimalModel newAnimal) {
+		// Log the API Call
+        logger.info("Entering AnimalBusinessService.addOne()");
+        
 		AnimalEntity entity = new AnimalEntity(
 				newAnimal.getId(),
 				newAnimal.getName(),
@@ -94,11 +109,17 @@ public class AnimalBusinessService implements IAnimalBusinessService
 
 	@Override
 	public boolean deleteOne(long id) {
+		// Log the API Call
+        logger.info("Entering AnimalBusinessService.deleteOne()");
+        
 		return service.deleteOne(id);
 	}
 
 	@Override
 	public AnimalModel updateOne(long idToUpdate, AnimalModel updateAnimal) {
+		// Log the API Call
+        logger.info("Entering AnimalBusinessService.updateOne()");
+        
 		AnimalEntity entity = new AnimalEntity(
 				updateAnimal.getId(),
 				updateAnimal.getName(),
