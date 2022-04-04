@@ -37,6 +37,9 @@ public class AnimalController
         model.addAttribute("title", "Show all animals");
         model.addAttribute("searchModel", new SearchAnimalModel());
         model.addAttribute("animals", animals);
+        
+        // Log the API Call
+        logger.info("Exiting AnimalController.getAnimals()");
         return "adopt";
     }
 	
@@ -60,6 +63,9 @@ public class AnimalController
         
         model.addAttribute("animals", animals); 
         model.addAttribute("searchModel", new SearchAnimalModel()); 
+        
+        // Log the API Call
+        logger.info("Exiting AnimalController.addOne()");
         return "adopt";
     } 
 	
@@ -87,6 +93,9 @@ public class AnimalController
 		model.addAttribute("title", "Search for Animals");
 		model.addAttribute("searchModel", searchModel);
 		model.addAttribute("animals", animals);
+		
+		// Log the API Call
+        logger.info("Exiting AnimalController.searchAnimals()");
 		return "adopt";
 	}
 	
@@ -100,6 +109,9 @@ public class AnimalController
         model.addAttribute("title", "Edit or Delete Animals");
         model.addAttribute("searchModel", new SearchAnimalModel());
         model.addAttribute("animals", animals);
+        
+        // Log the API Call
+        logger.info("Exiting AnimalController.getAnimalsADMIN()");
         return "admin";
 	}
 	
@@ -115,6 +127,9 @@ public class AnimalController
 		
 		model.addAttribute("animals", animals); 
 		model.addAttribute("searchModel", new SearchAnimalModel()); 
+		
+		// Log the API Call
+        logger.info("Exiting AnimalController.deleteOne()");
 		return "adopt";
 	}
 	
@@ -138,6 +153,9 @@ public class AnimalController
 		
 		model.addAttribute("animals", animals); 
 		model.addAttribute("searchModel", new SearchAnimalModel()); 
+		
+		// Log the API Call
+        logger.info("Exiting AnimalController.updateOne()");
 		return "adopt";
 	}
 }

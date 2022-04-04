@@ -33,6 +33,9 @@ public class AnimalBusinessService implements IAnimalBusinessService
                 result.getBreed(),
                 result.getDescription()
                 );
+        
+        // Log the API Call
+        logger.info("Exiting AnimalBusinessService.getById()");
         return animal;
 	}
 
@@ -62,6 +65,9 @@ public class AnimalBusinessService implements IAnimalBusinessService
                     		entity.getDescription())
                     );
         }
+        
+        // Log the API Call
+        logger.info("Exiting AnimalBusinessService.getAnimals()");
         return animals;
 	}
 
@@ -88,6 +94,9 @@ public class AnimalBusinessService implements IAnimalBusinessService
                     		entity.getDescription())
                     );
         }
+        
+        // Log the API Call
+        logger.info("Exiting AnimalBusinessService.searchAnimals()");
         return animals;
 	}
 
@@ -104,6 +113,9 @@ public class AnimalBusinessService implements IAnimalBusinessService
 				newAnimal.getBreed(),
 				newAnimal.getDescription()
                 );
+		
+		// Log the API Call
+        logger.info("Exiting AnimalBusinessService.addOne()");
         return service.addOne(entity);
 	}
 
@@ -112,6 +124,8 @@ public class AnimalBusinessService implements IAnimalBusinessService
 		// Log the API Call
         logger.info("Entering AnimalBusinessService.deleteOne()");
         
+        // Log the API Call
+        logger.info("Exiting AnimalBusinessService.deleteOne()");
 		return service.deleteOne(id);
 	}
 
@@ -138,6 +152,9 @@ public class AnimalBusinessService implements IAnimalBusinessService
                 result.getBreed(),
                 result.getDescription()
                 );
+        
+        // Log the API Call
+        logger.info("Exiting AnimalBusinessService.updateOne()");
         return updated;
 	}
 
