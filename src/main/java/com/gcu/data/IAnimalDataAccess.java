@@ -2,6 +2,9 @@ package com.gcu.data;
 
 import java.util.List;
 
+/**
+ * methods for animal; list, add, delete, update
+ */
 public interface IAnimalDataAccess <T>
 {
 	public T getById(int Id);

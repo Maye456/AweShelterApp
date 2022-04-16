@@ -19,6 +19,9 @@ public class AnimalBusinessService implements IAnimalBusinessService
 	
 	Logger logger = LoggerFactory.getLogger(AnimalBusinessService.class);
     
+	/**
+	 * Get the animal by id
+	 */
 	@Override
 	public AnimalModel getById(int Id) {
 		// Log the API Call
@@ -71,6 +74,9 @@ public class AnimalBusinessService implements IAnimalBusinessService
         return animals;
 	}
 
+	/**
+	 * Get all the animals from what is searched
+	 */
 	@Override
 	public List<AnimalModel> searchAnimals(String searchTerm) {
 		// Log the API Call
@@ -100,6 +106,9 @@ public class AnimalBusinessService implements IAnimalBusinessService
         return animals;
 	}
 
+	/**
+	 * This will add one animal 
+	 */
 	@Override
 	public int addOne(AnimalModel newAnimal) {
 		// Log the API Call
@@ -119,6 +128,9 @@ public class AnimalBusinessService implements IAnimalBusinessService
         return service.addOne(entity);
 	}
 
+	/**
+	 * This will delete one animal 
+	 */
 	@Override
 	public boolean deleteOne(long id) {
 		// Log the API Call
@@ -129,6 +141,9 @@ public class AnimalBusinessService implements IAnimalBusinessService
 		return service.deleteOne(id);
 	}
 
+	/**
+	 * Update an animal
+	 */
 	@Override
 	public AnimalModel updateOne(long idToUpdate, AnimalModel updateAnimal) {
 		// Log the API Call
